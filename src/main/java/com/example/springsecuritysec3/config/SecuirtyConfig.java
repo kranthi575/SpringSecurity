@@ -25,9 +25,10 @@ public class SecuirtyConfig {
     //filter method :: starting point of the security
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests((requests) -> requests
+        http.csrf(csrfConfig -> csrfConfig.disable())
+                .authorizeHttpRequests((requests) -> requests
                 .requestMatchers("/welcome").authenticated()
-                .requestMatchers("/public","/").permitAll());
+                .requestMatchers("/public","/register","/").permitAll());
         http.formLogin(withDefaults());
         http.httpBasic(withDefaults());
         return http.build();
