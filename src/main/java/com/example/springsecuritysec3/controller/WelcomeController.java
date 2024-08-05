@@ -11,4 +11,10 @@ public class WelcomeController {
     public String welcomeMsg(){
         return "Welcome to spring security!!";
     }
+
+    @GetMapping("/")
+    public String homePage(){
+        return "Welcome to home page";
+    }
+
 }
