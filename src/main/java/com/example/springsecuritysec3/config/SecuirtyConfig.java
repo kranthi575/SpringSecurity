@@ -33,18 +33,19 @@ public class SecuirtyConfig {
         return http.build();
     }
 
+    //commenting below code to use custom details services
     //storing users data in application memory
-    @Bean
-    public UserDetailsService userDetailsService(DataSource dataSource){
-
-//        UserDetails user= User.withUsername("user1").password("{noop}qaz").authorities("user").build();
-//        UserDetails admin=User.withUsername("admin").password("{bcrypt}$2a$12$l16zzDEuyWokORWN7V0qMOXj4vleYOI214dhQJB5iJyCr0s0OsfR2").authorities("admin").build();
+//    @Bean
+//    public UserDetailsService userDetailsService(DataSource dataSource){
 //
-//        return new InMemoryUserDetailsManager(user,admin);
-
-        //adding jdbc user details service to take data from database from tables users and authorities
-       return new JdbcUserDetailsManager(dataSource);
-    }
+////        UserDetails user= User.withUsername("user1").password("{noop}qaz").authorities("user").build();
+////        UserDetails admin=User.withUsername("admin").password("{bcrypt}$2a$12$l16zzDEuyWokORWN7V0qMOXj4vleYOI214dhQJB5iJyCr0s0OsfR2").authorities("admin").build();
+////
+////        return new InMemoryUserDetailsManager(user,admin);
+//
+//        //adding jdbc user details service to take data from database from tables users and authorities
+//       return new JdbcUserDetailsManager(dataSource);
+//    }
 
     //adding password encoder to decrypt the passwords as per requirements
     @Bean
@@ -53,10 +54,10 @@ public class SecuirtyConfig {
     }
 
     //this method helps us to check to is given password is compromised?
-    @Bean
-    public CompromisedPasswordChecker compromisedPasswordChecker(){
-        return new HaveIBeenPwnedRestApiPasswordChecker();
-    }
+//    @Bean
+//    public CompromisedPasswordChecker compromisedPasswordChecker(){
+//        return new HaveIBeenPwnedRestApiPasswordChecker();
+//    }
 
 
 
