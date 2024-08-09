@@ -23,6 +23,8 @@ import static org.springframework.security.config.Customizer.withDefaults;
 public class SecuirtyConfig {
 
     //filter method :: starting point of the security
+
+    //this method will validate the URL's entered by the user
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrfConfig -> csrfConfig.disable())

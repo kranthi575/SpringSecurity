@@ -20,6 +20,8 @@ public class CustomerDetailsService implements UserDetailsService {
     @Autowired
     private CustomerRepo customerRepo;
 
+
+    //this method will be called when user is logging. this methos checks the username entered ny user and va,idates the
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
