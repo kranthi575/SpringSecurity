@@ -1,2 +1,2 @@
 #SpringSecurity
-All about security
+All about Spring Security
